@@ -41,3 +41,15 @@ TEST_CASE("post eval tests") {
     post_expr = {"1", "2", "+", "3", "4", "-", "*"};
     REQUIRE( eval_post(post_expr) == -3 );
 }
+
+TEST_CASE("pre and post prints") {
+    // sorry but you will have to check this on the console:(
+    
+    vector<string> pre_expr = {"+", "*", "+", "3", "4", "5", "7"};
+    // (3+4)*5+7
+    show_pre(pre_expr);
+
+    vector<string> post_expr = {"8", "3", "-", "8", "4", "4", "+", "*", "+"};
+    //8-3+8*(4+4)
+    show_post(post_expr);
+}
